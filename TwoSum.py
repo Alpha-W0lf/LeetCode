@@ -31,15 +31,19 @@
 
 def twoSum(nums, target):
     answer = nums
-    for x in reversed(answer):
-        if x > target:
-            answer.remove(x)
+    # for x in reversed(answer):
+    #     if x > target:
+    #         answer.remove(x)
+    for i in nums:
+        remainder = target - i
+        for y in nums:
+            if y != i and y == remainder:
+                print('[', i, ', ', y, ']', sep='')
+                break
 
-
-    print(answer)
-
+# TODO: Figure out how to break after getting first working pair.
 
 nums_in = [2, 7, 11, 15]
-target_in = 9
+target_in = 18
 
 twoSum(nums_in, target_in)
