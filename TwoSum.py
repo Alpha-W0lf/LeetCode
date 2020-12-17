@@ -24,21 +24,22 @@
 # -109 <= target <= 109
 # Only one valid answer exists.
 
-def twoSum(nums, target):
-    answer = nums
-    # for x in reversed(answer):
-    #     if x > target:
-    #         answer.remove(x)
-    for i in nums:
-        remainder = target - i
-        for y in nums:
-            if y > i and y == remainder:
-                print('[', i, ', ', y, ']', sep='')
-                break
+class Solution:
+
+
+    def twoSum(self, nums, target):
+        for i in nums:
+            remainder = target - i
+            for y in nums:
+                if y > i and y == remainder:
+                    Output = [nums.index(i), nums.index(y)]
+                    # print('[', i, ', ', y, ']', sep='')
+                    print(Output)
+                    break
 
 # Figure out how to break after getting first working pair. DONE
 
-nums_in = [2, 7, 11, 15]
-target_in = 18
+nums_in = [3, 2, 4]
+target_in = 6
 
-twoSum(nums_in, target_in)
+Solution().twoSum(nums_in, target_in)
